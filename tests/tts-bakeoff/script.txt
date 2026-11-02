@@ -1,0 +1,17 @@
+# hook
+This repo got forty thousand stars in six days — and nobody could explain why.
+
+# proof
+It's called Moondream, version two. A vision model small enough to run on a laptop GPU.
+
+# mechanism
+A vision model can't actually look at a picture. So it chops the image into two hundred and fifty-six tiny tiles — like cutting a photo into puzzle pieces. Each tile becomes a number, a kind of word. So the picture turns into a sentence the language model can read.
+
+# peak
+But here's the clever part. It doesn't read every tile the same way. It spends more attention where the picture is busy — and almost none on empty sky. That's the trick: it's not seeing the image, it's skimming it.
+
+# resolution
+Which is why it stays tiny and still gets the answer right. Not seeing — reading, puzzle piece by puzzle piece.
+
+# cta
+Comment the model you want explained next.

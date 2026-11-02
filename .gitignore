@@ -1,0 +1,8 @@
+pipeline/discover/raw/
+pipeline/analytics/*.json
+tests/tts-bakeoff/out/
+tests/tts-bakeoff/.venv/
+node_modules/
+*.mp4
+*.wav
+.DS_Store

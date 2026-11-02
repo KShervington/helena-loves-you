@@ -1,0 +1,66 @@
+{
+  "slug": "2026-11-12_Example-Topic",
+  "topic_id": "github:owner/repo",
+  "lane": "evergreen",
+  "format": "How X actually works",
+  "status": "ready_for_review",
+  "status_by": "ts-qa",
+  "status_at": "2026-11-12T18:02:00Z",
+  "review_note": "",
+  "files": {
+    "video": "2026-11-12_Example-Topic/Exports/2026-11-12_Example-Topic_1080x1920.mp4",
+    "poster": "2026-11-12_Example-Topic/Exports/2026-11-12_Example-Topic_poster.jpg",
+    "textless": "2026-11-12_Example-Topic/Raw_Footage/2026-11-12_Example-Topic_textless_1080x1920.mp4",
+    "caption_pack": "2026-11-12_Example-Topic/Docs/caption-pack.md",
+    "sha256": null
+  },
+  "meta": {
+    "duration_s": 48.2,
+    "direction": "instrument",
+    "voice": "kokoro/af_heart",
+    "music": "music-lab-bed-01",
+    "hook_archetype": "number+gap",
+    "length_bucket": "45-50"
+  },
+  "publish_at": null,
+  "public_url": null,
+  "platforms": {
+    "instagram": {
+      "id": null,
+      "url": null,
+      "posted_at": null,
+      "attempts": 0,
+      "error": null
+    },
+    "tiktok": {
+      "id": null,
+      "url": null,
+      "posted_at": null,
+      "attempts": 0,
+      "error": null
+    },
+    "youtube": {
+      "id": null,
+      "url": null,
+      "posted_at": null,
+      "attempts": 0,
+      "error": null
+    }
+  },
+  "followups": {
+    "pinned_comment": false,
+    "first_hour_replies": false
+  },
+  "history": [
+    {
+      "at": "2026-11-12T17:40:00Z",
+      "event": "produced",
+      "by": "ts-produce"
+    },
+    {
+      "at": "2026-11-12T18:02:00Z",
+      "event": "qa_passed",
+      "by": "ts-qa"
+    }
+  ]
+}

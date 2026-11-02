@@ -1,0 +1,193 @@
+<!doctype html>
+<!--
+  tech_splained — aesthetic exploration.
+  One page, five themes, two frames. Open with ?theme=<id>&frame=hook|diagram
+  Themes: blueprint | instrument | midnight | clinical | signal
+  Rendered at 1080×1920 by render.mjs.
+-->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+/* ---------- fonts (OFL / SIL / Vercel OFL) ---------- */
+@font-face{font-family:Inter;font-weight:500;src:url(fonts/inter-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:700;src:url(fonts/inter-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:Inter;font-weight:800;src:url(fonts/inter-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:500;src:url(fonts/inter-tight-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:600;src:url(fonts/inter-tight-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Inter Tight";font-weight:700;src:url(fonts/inter-tight-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:400;src:url(fonts/space-grotesk-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:500;src:url(fonts/space-grotesk-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:600;src:url(fonts/space-grotesk-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:"Space Grotesk";font-weight:700;src:url(fonts/space-grotesk-latin-700-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-weight:400;src:url(fonts/jetbrains-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"JetBrains Mono";font-weight:500;src:url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:400;src:url(fonts/ibm-plex-mono-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"IBM Plex Mono";font-weight:500;src:url(fonts/ibm-plex-mono-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:Geist;font-weight:400;src:url(fonts/Geist-Regular.woff2) format("woff2")}
+@font-face{font-family:Geist;font-weight:500;src:url(fonts/Geist-Medium.woff2) format("woff2")}
+@font-face{font-family:Geist;font-weight:600;src:url(fonts/Geist-SemiBold.woff2) format("woff2")}
+@font-face{font-family:Geist;font-weight:700;src:url(fonts/Geist-Bold.woff2) format("woff2")}
+@font-face{font-family:"Geist Mono";font-weight:400;src:url(fonts/GeistMono-Regular.woff2) format("woff2")}
+@font-face{font-family:"Geist Mono";font-weight:500;src:url(fonts/GeistMono-Medium.woff2) format("woff2")}
+
+/* ---------- base ---------- */
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{font-family:var(--display);color:var(--text);position:relative;-webkit-font-smoothing:antialiased}
+#stage{position:absolute;inset:0;overflow:hidden;background:var(--bg)}
+.safe{position:absolute;left:60px;right:60px;top:220px;bottom:420px}
+.meta{position:absolute;left:72px;right:72px;top:150px;display:flex;justify-content:space-between;font-family:var(--mono);font-size:26px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}
+.meta b{color:var(--text);font-weight:500}
+.progress{position:absolute;left:72px;right:72px;top:1500px;height:3px;background:var(--line)}
+.progress i{display:block;height:100%;width:28%;background:var(--accent)}
+.hl{color:var(--accent)}
+.caption{position:absolute;left:90px;right:90px;top:1300px;text-align:center;font-family:var(--caption);font-weight:var(--caption-weight);font-size:58px;line-height:1.18;color:var(--text)}
+.caption .w{color:var(--accent)}
+.badge{position:absolute;left:72px;top:1560px;font-family:var(--mono);font-size:24px;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+
+/* ---------- hook frame ---------- */
+.hook h1{position:absolute;left:72px;right:72px;top:380px;margin:0;font-size:132px;line-height:1.0;letter-spacing:-.03em;font-weight:var(--h1-weight)}
+.hook h2{position:absolute;left:72px;right:72px;top:1010px;margin:0;font-size:52px;line-height:1.25;font-weight:500;color:var(--muted)}
+.hook .chart{position:absolute;left:72px;top:1130px;width:936px;height:150px}
+
+/* ---------- diagram frame ---------- */
+.diagram .title{position:absolute;left:72px;right:72px;top:300px;margin:0;font-size:68px;line-height:1.1;letter-spacing:-.02em;font-weight:var(--h1-weight)}
+.diagram .fig{position:absolute;left:72px;top:470px;width:936px;height:780px}
+.node{position:absolute;left:150px;width:636px;height:104px;border:var(--stroke) solid var(--line);border-radius:var(--radius);display:flex;align-items:center;padding:0 40px;box-sizing:border-box;font-size:40px;font-weight:600;background:var(--surface);gap:24px}
+.node .k{font-family:var(--mono);font-size:24px;color:var(--muted);letter-spacing:.1em;font-weight:500}
+.node.on{border-color:var(--accent);color:var(--accent)}
+.node.on .k{color:var(--accent)}
+.edge{position:absolute;left:467px;width:var(--stroke);background:var(--line);height:56px}
+.edge:after{content:"";position:absolute;left:50%;bottom:-2px;width:14px;height:14px;border-right:var(--stroke) solid var(--line);border-bottom:var(--stroke) solid var(--line);transform:translateX(-50%) rotate(45deg)}
+.callout{position:absolute;left:150px;top:688px;width:636px;font-family:var(--mono);font-size:26px;color:var(--accent);letter-spacing:.02em;text-align:center}
+.tiles{position:absolute;left:820px;top:104px;display:grid;grid-template-columns:repeat(4,22px);gap:5px}
+.tiles i{display:block;width:22px;height:22px;border:1.5px solid var(--accent);opacity:.9}
+.tiles i:nth-child(6){background:var(--accent)}
+
+/* ================= THEME: blueprint ================= */
+.t-blueprint{--bg:#F3F1EA;--surface:transparent;--text:#14213D;--muted:#6B7280;--line:#B9BDC7;--accent:#FF4F1F;
+  --display:"Space Grotesk";--mono:"JetBrains Mono";--caption:"Space Grotesk";--caption-weight:600;--h1-weight:600;--stroke:2px;--radius:4px}
+.t-blueprint #stage{background-image:linear-gradient(rgba(20,33,61,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(20,33,61,.07) 1px,transparent 1px);background-size:60px 60px;background-position:30px 30px}
+.t-blueprint .node{border-color:var(--text)}
+.t-blueprint .edge{background:var(--text)}.t-blueprint .edge:after{border-color:var(--text)}
+.t-blueprint .caption .w{white-space:nowrap;text-decoration:underline;text-decoration-thickness:4px;text-underline-offset:10px}
+.t-blueprint .dim{position:absolute;left:72px;top:1200px;width:936px;height:40px;border-left:2px solid var(--text);border-right:2px solid var(--text)}
+.t-blueprint .dim:before{content:"";position:absolute;left:0;right:0;top:50%;border-top:2px solid var(--text)}
+.t-blueprint .dim span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--bg);padding:0 16px;font-family:var(--mono);font-size:24px;letter-spacing:.1em}
+.t-blueprint .corner{position:absolute;width:40px;height:40px;border:2px solid var(--text)}
+
+/* ================= THEME: instrument ================= */
+.t-instrument{--bg:#06080C;--surface:#0B0F15;--text:#E6EDF3;--muted:#6E7B8B;--line:#1F2A36;--accent:#2DD4BF;--accent2:#F5B942;
+  --display:Geist;--mono:"Geist Mono";--caption:Geist;--caption-weight:600;--h1-weight:600;--stroke:1.5px;--radius:6px}
+.t-instrument #stage:after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0 1px,transparent 1px 4px);pointer-events:none}
+.t-instrument .bracket{position:absolute;width:48px;height:48px;border-color:var(--accent);border-style:solid;border-width:0;opacity:.9}
+.t-instrument .bracket.tl{left:60px;top:230px;border-left-width:2px;border-top-width:2px}
+.t-instrument .bracket.tr{right:60px;top:230px;border-right-width:2px;border-top-width:2px}
+.t-instrument .bracket.bl{left:60px;top:1420px;border-left-width:2px;border-bottom-width:2px}
+.t-instrument .bracket.br{right:60px;top:1420px;border-right-width:2px;border-bottom-width:2px}
+.t-instrument .readout{position:absolute;right:72px;top:1000px;font-family:var(--mono);font-size:30px;color:var(--muted);text-align:right;line-height:1.6}
+.t-instrument .readout b{color:var(--accent);font-weight:500}
+.t-instrument .node.on{box-shadow:0 0 0 1px var(--accent) inset,0 0 40px rgba(45,212,191,.18)}
+.t-instrument .caption .w{text-shadow:0 0 24px rgba(45,212,191,.6)}
+
+/* ================= THEME: midnight ================= */
+.t-midnight{--bg:#0E1320;--surface:#131A2B;--text:#ECEFF6;--muted:#8A94A8;--line:#2A3450;--accent:#FFC857;--blue:#58C4DD;
+  --display:Inter;--mono:"IBM Plex Mono";--caption:Inter;--caption-weight:700;--h1-weight:800;--stroke:3px;--radius:18px}
+.t-midnight .node{border-color:var(--blue);color:var(--text);box-shadow:0 0 30px rgba(88,196,221,.10)}
+.t-midnight .edge{background:var(--blue)}.t-midnight .edge:after{border-color:var(--blue)}
+.t-midnight .node.on{border-color:var(--accent);color:var(--accent);box-shadow:0 0 50px rgba(255,200,87,.22)}
+.t-midnight .glow{position:absolute;left:50%;top:620px;width:900px;height:900px;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(88,196,221,.12),transparent 70%)}
+.t-midnight .caption{font-size:62px}
+
+/* ================= THEME: clinical ================= */
+.t-clinical{--bg:#FFFFFF;--surface:#FFFFFF;--text:#0A0A0A;--muted:#8E8E93;--line:#E5E5EA;--accent:#0A84FF;
+  --display:"Inter Tight";--mono:Inter;--caption:"Inter Tight";--caption-weight:600;--h1-weight:600;--stroke:2px;--radius:14px}
+.t-clinical .meta{text-transform:none;letter-spacing:0;font-size:28px}
+.t-clinical .node{color:var(--muted);border-color:var(--line)}
+.t-clinical .node.on{color:var(--accent);border-color:var(--accent);background:#F0F6FF}
+.t-clinical .caption{color:var(--text)}
+.t-clinical .hook h1{font-size:140px;letter-spacing:-.045em}
+.t-clinical .badge{text-transform:none;letter-spacing:0;font-size:26px}
+
+/* ================= THEME: signal ================= */
+.t-signal{--bg:#000000;--surface:#000000;--text:#F2F2F2;--muted:#777777;--line:#2C2C2C;--accent:#00E07A;
+  --display:"JetBrains Mono";--mono:"JetBrains Mono";--caption:"JetBrains Mono";--caption-weight:500;--h1-weight:500;--stroke:2px;--radius:0px}
+.t-signal .hook h1{font-size:92px;letter-spacing:-.02em;line-height:1.08}
+.t-signal .hook h1:before{content:"> ";color:var(--accent)}
+.t-signal .node{font-weight:500;font-size:36px}
+.t-signal .edge{background:none;border-left:2px dashed var(--line)}
+.t-signal .caption{font-size:50px}
+.t-signal .caption .w{background:var(--accent);color:#000;padding:0 10px}
+.t-signal .diagram .title{font-size:56px;font-weight:500}
+.t-signal .diagram .title:before{content:"// ";color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<script>
+const q = new URLSearchParams(location.search);
+const theme = q.get("theme") || "blueprint";
+const frame = q.get("frame") || "hook";
+document.body.className = "t-" + theme + " " + frame;
+const stage = document.getElementById("stage");
+
+const META = `<div class="meta"><span><b>tech_splained</b></span><span>no. 014</span></div>`;
+const PROGRESS = `<div class="progress"><i></i></div>`;
+
+const chart = `<svg class="chart" viewBox="0 0 936 150" fill="none">
+  <polyline points="0,140 120,138 240,136 360,133 480,128 560,120 640,100 720,70 800,34 936,6" stroke="var(--accent)" stroke-width="4" stroke-linejoin="round"/>
+  <line x1="0" y1="149" x2="936" y2="149" stroke="var(--line)" stroke-width="2"/>
+  <circle cx="936" cy="6" r="9" fill="var(--accent)"/>
+</svg>`;
+
+const HOOK = `
+  ${META}
+  <h1>This repo got <span class="hl">40,000 stars</span> in six days.</h1>
+  <h2>Nobody could explain why.</h2>
+  ${chart}
+  <div class="caption">and it’s <span class="w">not</span> what you think</div>
+  ${PROGRESS}
+  <div class="badge">01 / hook</div>
+`;
+
+const nodes = [
+  ["01","Image",false],["02","256 tiles",true],["03","Vision encoder",false],["04","Tokens",false],["05","Language model",false]
+];
+let fig = "";
+nodes.forEach((n,i)=>{
+  const top = i*152;
+  fig += `<div class="node ${n[2]?"on":""}" style="top:${top}px"><span class="k">${n[0]}</span>${n[1]}${n[2]?'<div class="tiles" style="top:20px;left:460px">'+'<i></i>'.repeat(16)+'</div>':''}</div>`;
+  if(i<nodes.length-1) fig += `<div class="edge" style="top:${top+104}px"></div>`;
+});
+const DIAGRAM = `
+  ${META}
+  <h1 class="title">How a vision model <span class="hl">reads</span> an image</h1>
+  <div class="fig">${fig}</div>
+  <div class="caption">it chops the image into <span class="w">256 tiny tiles</span></div>
+  ${PROGRESS}
+  <div class="badge">03 / mechanism</div>
+`;
+
+stage.innerHTML = frame === "hook" ? HOOK : DIAGRAM;
+
+// theme-specific decorations
+if (theme === "blueprint") {
+  stage.insertAdjacentHTML("beforeend", `<div class="corner" style="left:60px;top:220px;border-right:0;border-bottom:0"></div>
+  <div class="corner" style="right:60px;top:220px;border-left:0;border-bottom:0"></div>
+  <div class="corner" style="left:60px;top:1460px;border-right:0;border-top:0"></div>
+  <div class="corner" style="right:60px;top:1460px;border-left:0;border-top:0"></div>`);
+  if (frame === "hook") stage.insertAdjacentHTML("beforeend", `<div class="dim" style="top:1200px"><span>6 DAYS</span></div>`);
+}
+if (theme === "instrument") {
+  stage.insertAdjacentHTML("beforeend", `<div class="bracket tl"></div><div class="bracket tr"></div><div class="bracket bl"></div><div class="bracket br"></div>`);
+  if (frame === "hook") stage.insertAdjacentHTML("beforeend", `<div class="readout">STARS <b>40,112</b><br>Δ7D <b>+38,904</b></div>`);
+}
+if (theme === "midnight") stage.insertAdjacentHTML("afterbegin", `<div class="glow"></div>`);
+if (theme === "blueprint" && frame === "diagram") {
+  const c = document.createElement("div"); c.className="callout"; c.style.top="1270px"; c.textContent="FIG. 03 — EACH TILE BECOMES ONE “WORD”"; c.style.left="72px"; c.style.width="936px"; stage.appendChild(c);
+}
+window.ready = document.fonts.ready;
+</script>
+</body>
+</html>
