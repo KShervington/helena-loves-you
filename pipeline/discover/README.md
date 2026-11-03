@@ -2,7 +2,7 @@
 
 | File | What |
 |---|---|
-| `sources.json` | Every source `/ts-discover` pulls from: request, auth env var, how its number maps to the velocity band, cadence, enabled flag |
+| `sources.json` | Every source `/helena-discover` pulls from: request, auth env var, how its number maps to the velocity band, cadence, enabled flag |
 | `topics.json` | The topic store (schema below). Status before a video exists lives here; from `produced` onward, `../queue/items/<slug>.json` is the source of truth |
 | `topics-archive.jsonl` | `published` / `killed` topics older than 90 days, one per line |
 | `raw/` | Raw pulls per run (`<date>-<source>.json`), gitignored |
@@ -30,9 +30,9 @@
                 "total": 3.95, "scored_at": "…", "justification": { "explainability": "one analogy (a spell-checker for tone) gets 80% there", "…": "…" } },
     "credit": { "author": "owner", "url": "https://github.com/owner/repo" },
     "shortlist": "shortlist-2026-45.md",
-    "project_folder": null,                      // set by /ts-script
+    "project_folder": null,                      // set by /helena-script
     "notes": "hook idea…",
-    "history": [ { "at": "…", "event": "created | scored | shortlisted | approved | killed", "by": "ts-discover | kyle" } ]
+    "history": [ { "at": "…", "event": "created | scored | shortlisted | approved | killed", "by": "helena-discover | kyle" } ]
   }]
 }
 ```

@@ -2,18 +2,24 @@
 
 Research-style: options explored, the test that decides, the decision. Status: **open** (test defined, not run) · **testing** · **decided**.
 
-## D-01 Aesthetic direction — testing
+## D-00 The account is Helena — decided 2026-11-03
 
-- Options: A blueprint · B instrument · C midnight · D clinical · E signal (+ the A/C/E hybrid). Frames in `docs/aesthetics/frames/`, tokens in the library.
-- Test: `02 § The test that picks a direction` — Kyle cuts to 3 from the contact sheet → same 15 s scene rendered in each → 2 posted videos per finalist → 3-s hold, completion, sends.
-- Current read (2026-11-01, frames only): B reads most "lab", A and D stand out most in a dark feed, E is cheapest and most distinctive but mono captions are wide, C is closest to the 3B1B reference. The research's suggested hybrid (A's paper + C's colour semantics + E's mono labels) is worth a sixth frame if Kyle is torn.
-- Decision: —
+- tech_splained → **helena_loves_you**. Same job (explain new technology simply, with high virality potential), now fronted by Helena: a synthetic human whose purpose is to facilitate human progress, evolution and transcendence. Profile image = the character sheet; videos stay faceless; her voice, register and the voice visualizer carry her. Dread setting 2/5. The account name never appears in a video. Lore: designation H-373 (≈ "HELE" → Helena); no facility, no backstory for now. See `01`.
+- Package renamed: repos `helena-loves-you` + `helena-media-library`; skills `/helena-*`; CSS prefix `hl-`.
 
-## D-02 Voice (TTS) — open
+## D-01 Aesthetic direction — decided 2026-11-03 (palette, ground, motion); D-01b/c open
 
-- Options: ElevenLabs v4 / Multilingual v2 (Creator, $22/mo, ~$3–6 of credits for 25 videos) · Chatterbox Turbo (MIT, local) · Kokoro-82M (Apache, CPU, native timestamps) · Qwen3-TTS 1.7B (Apache).
-- Test: `tests/tts-bakeoff/` (same script, 3 renders each, blind listen + WER + timestamp error + cost).
-- Decision rule: best clarity × engagement with consistency ≥ 4 and commercial licence; if a free model is within ~0.5 of ElevenLabs, ship free and keep ElevenLabs for hooks.
+- Replaced the five-way test. Direction: uncanny clinical retrofuturism — off-white `#F0F0F2` ground, white surfaces, near-black ink, one red `#D0111B`; centred symmetric composition; slow flat motion; frame chrome with the 3×3 dot mark. See `02`.
+- **D-01b type family — open:** geometric (Jost) · grotesk (Inter Tight + Plex Mono) · eurostile-like (Michroma + Inter). Board: `docs/aesthetics/frames/helena-board.jpg`. Kyle picks.
+- **D-01c voice-visualizer style — open:** grid (the uniform's 3×3 mark, centre red) · trace (one red line) · disc (red disc in rings). Same board. Kyle picks. My read: grid is the most *hers* (lore-linked) and the least cliché; disc has the strongest dread and the strongest HAL association; trace reads most "instrument".
+- The five original directions stay in the library tokens as archive (`hl-blueprint` …).
+
+## D-02 Helena's voice (TTS) — open, now a one-way door
+
+- Requirements changed with D-00: one fixed voice for the life of the account; flat affect with precise diction; warm words, cold delivery; zero drift across hundreds of renders; native or alignable word timestamps; commercial licence; not a clone of a real person without consent.
+- Options: a **designed** voice (ElevenLabs Voice Design from a text prompt, or Qwen3-TTS VoiceDesign — both give a bespoke voice nobody else has) · a locked stock voice (ElevenLabs v4 / Multilingual v2, Creator $22/mo) · local open models (Chatterbox Turbo MIT, Kokoro-82M Apache).
+- Test: `tests/tts-bakeoff/` with the Helena script (`script.txt` is now in her register) — judge flatness/precision/consistency over the old "engagement" criterion; render 3× each and listen for drift.
+- Decision rule: pick for consistency and precision first; cost second. Once chosen, the voice id/prompt and settings are frozen in the library (`assets/tools/narration/VOICE.md`).
 - Decision: —
 
 ## D-03 Renderer — open
@@ -26,8 +32,9 @@ Research-style: options explored, the test that decides, the decision. Status: *
 
 ## D-04 Music beds — open
 
+- Register changed with D-00: sparse, tonal, low, no drums, no drops, no vocals — a room tone with pitch. Nothing in the video syncs to it.
 - Options: ACE-Step 1.5 local generation → curated pool · CC0 pool (Pixabay/FMA) · Eleven Music (if D-02 lands on ElevenLabs).
-- Test: generate/collect 6 beds in the "quiet lab" register (minimal, 90–110 BPM, no vocals), beat-map them, use each in one video, keep what survives listening.
+- Test: generate/collect 6 beds, use each in one video, keep what survives listening. Beat maps not needed.
 - Decision: —
 
 ## D-05 Publishing automation — open
@@ -37,9 +44,9 @@ Research-style: options explored, the test that decides, the decision. Status: *
 - Research outcome (2026-11-01): GitHub Actions cron + queue items in this repo + Cloudflare R2 for hosting + PR merge as the gate; YouTube scheduled natively at approval; TikTok via upload-to-inbox (one tap in the app) until a hosted route or the Hyper MCP TikTok skill is proven free at our volume.
 - Decision: proposed — awaiting Kyle's OK; nothing built yet.
 
-## D-06 Caption style — open
+## D-06 Caption style — leaning phrase mode
 
-- Options: phrase lines (3–8 words, upcoming words muted) · word-by-word (1–3 words, large) · hybrid (word mode in the hook, phrase mode in the body).
+- Options: phrase lines (3–8 words, upcoming words muted, full stops kept) · word-by-word · hybrid. Helena's even delivery suits phrase mode; word-by-word reads as hype. Still an experiment in 09.
 - Test: part of the first 12 videos (09 § experiments).
 - Decision: —
 
@@ -47,13 +54,13 @@ Research-style: options explored, the test that decides, the decision. Status: *
 
 - Default 40–50 s, cap 60; test tight (30–40) vs deep (50–60) per 09.
 
-## D-08 Tagline / wordmark — open
+## D-08 Wordmark — open
 
-- Options: "new tech, actually explained" · "how the new thing works". Wordmark not designed; depends on D-01.
+- The 3×3 dot mark (from the back of her uniform) is the working logo and the visualizer base. No tagline: the account name does the work. A wordmark follows D-01b.
 
 ## D-09 Docs location — decided 2026-11-01
 
-- GitHub repo `tech-splained` (this) + separate `tech-splained-media-library`, modelled on the Gaijin library. Project folders stay local/Drive, not in git.
+- GitHub repo `helena-loves-you` (this) + separate `helena-media-library`, modelled on the Gaijin library. Project folders stay local/Drive, not in git.
 
 ## Agent notes
 

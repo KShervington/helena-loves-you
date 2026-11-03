@@ -1,9 +1,9 @@
 ---
-name: ts-qa
-description: Run the tech_splained QA gate on a produced video folder — automated file/audio checks plus a frame-by-frame readability, accuracy and design-system review — and write Docs/qa.md with pass/fail per rule. Use for "/ts-qa <folder>", "check this video", or automatically at the end of /ts-produce.
+name: helena-qa
+description: Run the helena_loves_you QA gate on a produced video folder — automated file/audio checks plus a frame-by-frame readability, accuracy and design-system review — and write Docs/qa.md with pass/fail per rule. Use for "/helena-qa <folder>", "check this video", or automatically at the end of /helena-produce.
 ---
 
-# /ts-qa <project folder>
+# /helena-qa <project folder>
 
 Read `docs/07-qa-checklist.md` and apply every line. Output `Docs/qa.md`:
 

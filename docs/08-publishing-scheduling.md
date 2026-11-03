@@ -30,12 +30,12 @@ So "full automation" = fully automated on two platforms, one tap on the third, u
 
 ```mermaid
 flowchart LR
-  subgraph Mac["Mac / cloud agent — /ts-produce + /ts-qa"]
+  subgraph Mac["Mac / cloud agent — /helena-produce + /helena-qa"]
     R[Render MP4 + poster] --> U[Upload to R2<br/>media.<domain>/yyyy/mm/slug.mp4]
     U --> Q[Write queue item<br/>status: ready_for_review]
     Q --> PR[PR: approve slug]
   end
-  PR -->|Kyle merges = approved| MAIN[(tech-splained repo, main)]
+  PR -->|Kyle merges = approved| MAIN[(helena-loves-you repo, main)]
   subgraph GHA["GitHub Actions"]
     C[cron every 15 min<br/>+ manual dispatch<br/>concurrency lock] --> L[publish.mjs<br/>approved & publish_at ≤ now]
     L --> T[refresh tokens]
@@ -91,9 +91,13 @@ Daily token-hygiene workflow: refresh IG (if > 24 h), TikTok, test YouTube with 
 
 Default slot **11:00–13:00 ET** on workdays (US lunch / EU late afternoon), jittered a few minutes per platform so the first-hour replies can be done on all three; test an 18:00–20:00 ET slot per 09. The `--schedule-month` mode fills every workday that has no `publish_at`, leaving the configured hot-lane days open.
 
+## Synthetic-content disclosure
+
+Helena is a synthetic persona with a synthetic voice. Every bio says "Helena is synthetic." and the publisher sets each platform's AI-content flag where the platform asks (TikTok `is_aigc: true`; YouTube's altered/synthetic content disclosure at upload; Instagram's AI label if offered). Check the current rules in each developer portal at setup time — they change — and record what was set in the queue item. Disclosure is on-brand; hiding it is the only way this could hurt the account.
+
 ## Caption packs
 
-From `Docs/caption-pack.md` (template): Instagram — hook line, 2–3-sentence summary, credit, CTA, 0–2 hashtags; TikTok — hook line + 3–5 hashtags incl. `#techsplained`; YouTube — keyword-first title ≤ 70 chars, description with source + credit + CTA, 2–3 hashtags. Say and show the searchable keyword; never `#fyp`-style stuffing.
+From `Docs/caption-pack.md` (template): Instagram — hook line, 2–3-sentence summary, credit, CTA, 0–2 hashtags; TikTok — hook line + 3–5 hashtags incl. `#helena`; YouTube — keyword-first title ≤ 70 chars, description with source + credit + CTA, 2–3 hashtags. Say and show the searchable keyword; never `#fyp`-style stuffing.
 
 ## One-time setup (realistic: a weekend for IG + YT + TikTok-inbox)
 

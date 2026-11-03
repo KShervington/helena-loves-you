@@ -1,70 +1,68 @@
 # 02 — Visual design system
 
-Status: **direction not yet chosen** (see `10-decision-log.md` § Aesthetic). Everything in § Shared is fixed regardless of direction; § Directions describes the five candidates and the test that picks one.
+Status: **palette and ground decided (D-01, 2026-11-03)**; type family (D-01b) and voice-visualizer style (D-01c) are being picked from `docs/aesthetics/frames/helena-board.jpg`. Everything in § Shared is fixed.
 
-Evidence: `docs/research/aesthetic-directions.md`. Live tokens: `tech-splained-media-library/assets/brand/techsplained/tokens.css`. Rendered test frames: `docs/aesthetics/frames/`; regenerate with `node docs/aesthetics/render.mjs`.
+The look is *uncanny clinical retrofuturism*: immaculate, symmetric, controlled, and slightly wrong because nothing is ever rushed. References: 2001 (white architecture, isolated red), THX 1138 (featureless white, dehumanising calm), Severance (institutional symmetry), Mirror's Edge (red on white), The Andromeda Strain (clinical equipment), Portal 2 (white test chambers). Kyle's longer description: `docs/aesthetics/helena_aesthetic.md`; character reference: `docs/aesthetics/helena-reference-sheet.png`.
+
+Live tokens: `helena-media-library/assets/brand/helena/tokens.css` (class `hl-helena` + one `hl-type-*`). Test frames: `docs/aesthetics/helena.html` → `node render-helena.mjs`. The earlier five-direction exploration (`explore.html`, `frames/`) is kept as an archive.
+
+## Palette (from the reference sheet)
+
+| Role | Hex | Use |
+|---|---|---|
+| Ground | `#F0F0F2` off-white | the frame |
+| Surface | `#FFFFFF` white | nodes, cards — white objects on off-white, like her uniform on the backdrop |
+| Ink | `#0E0E10` near-black | all text, the structural marks |
+| Muted | `#8A8A8E` | labels, indices, upcoming caption words |
+| Line | `#C9C9CE` | hairlines, node borders, rules |
+| **Accent** | `#D0111B` red | **one isolated object per frame**: the highlighted element, the spoken word, the centre of the visualizer |
+
+The red is never a fill behind text, never a gradient, never more than one object at a time. Think of the red cup on the reference sheet.
 
 ## Shared (fixed)
 
-### Canvas
-- 1080×1920, 30 fps. Design at 1×; nothing scales.
-- **Must-read zone:** x 60–960 (keep the right ~120 px for the action column), y 220–1440. Captions sit centred in a ≤ 900 px column at y ≈ 1200–1380. Nothing the viewer must read goes in the bottom 480 px or the top 220 px. Decorative lines may bleed to the edges.
-- Frame 0 = cover: hook text + one diagram element, ≤ 3 objects. Centre the title so the 4:5 (feed) and 1:1 (grid) crops still show it.
+### Canvas and safe area
+- 1080×1920, 30 fps, 1×.
+- Must-read zone: x 60–960, y 220–1440. Captions centred in a ≤ 840 px column at y ≈ 1300. Nothing to read in the bottom 480 px or the top 220 px.
+- **Everything is centred.** Symmetry is the default; a deliberate off-centre element is a storytelling choice, not a layout choice.
+- Frame chrome on every video: `HELENA · <index>` meta line at y 150 in tracked uppercase, a 300-px hairline rule under it, the voice visualizer at y ≈ 300, a hairline rule at y 1500, a beat index at y 1560 (`01 — hook`, `03 — mechanism`, `07 — request`).
 
-### Colour discipline
-- Three roles only: **ground** (background), **ink** (text + structure), **accent** (the one thing to look at). A fourth, `--accent2`, exists for a second semantic meaning (a "before" state, a warning) and most videos never use it.
-- One colour = one meaning for the whole video. The accent marks the highlighted element and the highlighted caption word — nothing else.
-- Highlight by subtraction: dim the rest to `--muted` rather than only brightening the subject.
-- Contrast: captions ≥ 7:1 on the ground (all five directions clear 16:1); diagram strokes ≥ 3:1. Check the brightest and darkest frames.
+### Type scale (px)
+| Role | Size | Notes |
+|---|---|---|
+| Hook H1 | `--hl-h1` (104–112; 78 for Michroma) | centred, ≤ 3 lines |
+| Scene title | `--hl-title` (44–64) | centred |
+| Caption | 58 | weight per family |
+| Node label | 36 | centred in the node |
+| Label / index | 20–24, tracked .22–.32 em, uppercase | `--label` |
 
-### Type scale (px at 1080 wide)
-| Role | Size | Weight | Font |
-|---|---|---|---|
-| Hook H1 | 120–140 | direction's `--h1-weight` | `--display` |
-| Scene title | 64–72 | 600–800 | `--display` |
-| Caption | 60–66 | 700 (600 for lighter faces) | `--caption` |
-| Node label | 36–40 | 600 | `--display` |
-| Mono annotation / index | 24–28, +0.08–0.14 em tracking | 400–500 | `--mono` |
-Floor: nothing under 32 px. Mono captions cap at ~22 characters/line.
+Family candidates (D-01b): **geometric** Jost (Kubrick/2001), **grotesk** Inter Tight + IBM Plex Mono labels (Severance/THX), **eurostile-like** Michroma headings + Inter captions (70s sci-fi). All OFL.
 
 ### Captions
-- Word-synced from `narration.json`; the current word takes the accent; spoken-but-passed words stay ink; upcoming words aren't shown (or shown at `--muted` in the 3–5-word style — pick per direction, record in the decision log).
-- Sit directly on the ground; add an 80 %-opaque pill only when a caption overlaps a diagram.
-- A caption is on screen ≥ 0.3 s per word from the moment it's complete. Captions must be in sync in the first 3 s above all.
+- Word-synced from `narration.json`; the spoken word turns red; passed words stay ink; upcoming words muted. One accent word per line at most.
+- Full stops stay in captions. Helena's sentences end.
+- ≥ 0.3 s per word on screen; in sync in the first 3 s above all.
 
-### Motion language
-- Purpose test: if you can't name what a move communicates (state change, attention, continuity, relationship), it doesn't move. Default to stillness between beats.
-- Ease-out in (`cubic-bezier(.16,1,.3,1)`), ease-in out, ease-in-out for in-frame moves. Never linear.
-- Durations: UI moves 200–400 ms; diagram draw-ons 600–900 ms; sibling stagger 40–80 ms.
-- Reveal order = reading order, primary element first. Every object persists: move or morph it, never blink it out and in.
-- Transitions: dip through the ground, or a stagger (old out, then new in); a slow re-frame (dolly/zoom) when objects persist. No crossfades between two busy layouts.
-- Reveals are triggered by narration words, not timers (see 05 and the composition contract in 06).
-- No whole-frame pulsing on beats. Music sync is for specific events: a reveal landing, a transition, the CTA card.
+### Motion language — this is where the dread lives
+- **Slow.** UI moves 500 ms; diagram draw-ons 1.2 s; stagger 120 ms. Roughly twice the durations of a normal explainer.
+- **Flat.** Ease `cubic-bezier(.25,.1,.25,1)` in, `cubic-bezier(.42,0,1,1)` out. No overshoot, no bounce, no spring, ever.
+- **Arrive, don't pop.** Elements fade and settle; nothing scales up from zero, nothing flies in.
+- **Hold.** A finished frame holds still until the next spoken clause. Stillness is content.
+- **Cut or dip.** Scene changes are a fade through the ground or a hard cut on a sentence boundary; never a wipe, whip or zoom-through.
+- **Colour arrives last.** The diagram builds in ink; the red lands exactly on the spoken word.
+- **No beat sync.** Music never drives motion; nothing pulses. The only thing that moves with sound is the visualizer, and only with her voice.
+- **Precision as texture.** Hairlines align to a grid; indices increment; text is tracked evenly. Let the viewer sense that it was built by something that doesn't make mistakes.
+
+### The voice visualizer (her carrier)
+Top centre, under the meta line. Driven by `levels.json` (loudness bands from her narration, `levels.py`), never by music. Idle in silence, moving while she speaks. Three candidate styles (D-01c): **grid** (the 3×3 dot mark from the back of her uniform; centre dot red), **trace** (one red line), **disc** (red disc in hairline rings). It is the only red object in frames where nothing else is highlighted; when a diagram element is highlighted, the visualizer's red stays — it's her, not a highlight — and the rule becomes "one red *idea*".
 
 ### Sound
-- Music bed under the voice at ≥ 10 dB ducking; SFX on reveals and transitions only; −14 LUFS integrated, ≤ −1 dBTP.
+- Her voice is dry and close. Music is a low, sparse, tonal bed well under her (≥ 12 dB), no drums, no drops. SFX are few and quiet: a soft tick when an element arrives, a single tone on the red landing, nothing on cuts. −14 LUFS, ≤ −1 dBTP.
 
-## Directions (candidates)
+## Diagram primitives
+Same primitive set as `05`; in the Helena direction they render as white rectangles with hairline borders, square corners, centred labels with a muted index at the left, one red chip or border on the highlighted stage. No glows, no rounded corners, no fills other than white.
 
-Each is implemented as a body class in `tokens.css` and rendered in `docs/aesthetics/frames/`.
-
-| Id | Ground / ink / accent | Fonts | Signature | Trade-offs |
-|---|---|---|---|---|
-| **A blueprint** | paper `#F3F1EA` / ink navy `#14213D` / international orange `#FF4F1F` (secondary blue `#1D4ED8`) | Space Grotesk + JetBrains Mono | hairline grid, ink draw-on, dimension lines, "FIG. 03" annotations | Light frames stand out in a dark feed; low HTML cost; least "sci-fi"; Vercel/Stripe adjacency |
-| **B instrument** | near-black `#06080C` / `#E6EDF3` / teal `#2DD4BF` (amber `#F5B942` for warnings) | Geist + Geist Mono | corner brackets, readouts, count-ups, scan-wipes, faint scanlines | Most literally "sci-fi lab"; many dark HUD clips exist (clone risk); glows cost a little |
-| **C midnight** | navy `#0E1320` / `#ECEFF6` / yellow `#FFC857` (blue `#58C4DD` = structure) | Inter + IBM Plex Mono | soft glow, rounded primitives, morphs, 3B1B colour semantics | Closest to the 3B1B reference; path morphing is the costliest motion; "another Manim channel" risk |
-| **D clinical** | white / `#0A0A0A` / blue `#0A84FF` | Inter Tight + Inter | big tight type, grey structure, colour arrives last | Cleanest; high feed differentiation; least lab-like; blue on white is borderline, so body captions stay black |
-| **E signal** | black / `#F2F2F2` / green `#00E07A` | JetBrains Mono everywhere | type-on, dashed connectors, `>` prompts, inverted highlight | Cheapest to build; strong identity; mono captions are wide (short lines); hacker-aesthetic risk |
-
-Hybrid worth testing (from the research): A's paper grid and draw-on as the frame + C's colour semantics + E's mono labels.
-
-### Diagram primitives per direction
-All directions implement the same primitive set (05) — only stroke, radius, glow and connector style differ. Primitives read `--stroke`, `--radius`, `--line`, `--accent` and never hard-code colour.
-
-## The test that picks a direction
-
-1. Render the same 15 s mechanism scene (narration + captions + a pipeline primitive + one transition) in the top 3 directions after Kyle's first cut from the contact sheet.
-2. Judge on: readability on a phone at arm's length; how distinct it is in a feed of dark videos (screenshot the three frames into a mock feed); how much the agent had to fight the style to express the diagram; render cost.
-3. Post 2 videos per finalist over 3 weeks (same hook archetype), compare 3-s retention and completion (09). Keep the losers' tokens for occasional "special" videos.
-
-Record the result in `10-decision-log.md`; after that, `/ts-produce` uses only the chosen class.
+## What was decided and what's left
+- Decided: palette, ground/surface logic, one-red rule, centred composition, slow-flat motion, frame chrome, no stills of Helena, visualizer as carrier.
+- D-01b type family and D-01c visualizer style: pick from the board; the library tokens carry all three families until then.
+- Wordmark: not designed (D-08). The 3×3 dot mark is the working logo.

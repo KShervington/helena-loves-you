@@ -1,9 +1,9 @@
 ---
-name: ts-publish
-description: Publish approved tech_splained videos from the queue to Instagram Reels, TikTok and YouTube Shorts with per-platform captions, then record results — or schedule them by assigning publish slots. Refuses anything not approved by Kyle. Use for "/ts-publish", "post today's video", "schedule next month", or the daily scheduled run.
+name: helena-publish
+description: Publish approved helena_loves_you videos from the queue to Instagram Reels, TikTok and YouTube Shorts with per-platform captions, then record results — or schedule them by assigning publish slots. Refuses anything not approved by Kyle. Use for "/helena-publish", "post today's video", "schedule next month", or the daily scheduled run.
 ---
 
-# /ts-publish [--slot YYYY-MM-DD | --dry-run | --schedule-month YYYY-MM]
+# /helena-publish [--slot YYYY-MM-DD | --dry-run | --schedule-month YYYY-MM]
 
 Read first: `docs/08-publishing-scheduling.md`, `pipeline/queue/README.md`, `pipeline/queue/items/*.json`.
 

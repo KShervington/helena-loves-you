@@ -62,7 +62,7 @@ Canonical keys (`github:owner/repo`, `hf:ns/name`, `arxiv:id`, `url:…`); a pap
 
 ## The shortlist ritual
 
-- **Weekly (Mon):** 10 candidates, ranked, each with the one-sentence explanation, lane, format, primitive, analogy, two hooks, sources and risks. Kyle picks in ≤ 10 minutes. Picks → `shortlisted` → `/ts-script`.
+- **Weekly (Mon):** 10 candidates, ranked, each with the one-sentence explanation, lane, format, primitive, analogy, two hooks, sources and risks. Kyle picks in ≤ 10 minutes. Picks → `shortlisted` → `/helena-script`.
 - **Monthly topic day:** 25 evergreen candidates; Kyle picks 12–15 for next month's batch.
 - **Hot:** any time; the shortlist entry says when the window closes.
 - **Comments (Fri):** audience requests, tagged `source: audience`; these get a +0.5 relevance bump because they close the CTA loop on screen ("you asked…").

@@ -1,9 +1,9 @@
 ---
-name: ts-discover
-description: Find and score new-technology topics for tech_splained videos — pull candidates from the configured sources (GitHub velocity, HN, Hugging Face, arXiv, release feeds, skill marketplaces, our own comments), dedupe, score with the rubric, and write a shortlist for Kyle to approve. Use for "/ts-discover", "find topics", "what should we explain this week", or the weekly/monthly topic run.
+name: helena-discover
+description: Find and score new-technology topics for helena_loves_you videos — pull candidates from the configured sources (GitHub velocity, HN, Hugging Face, arXiv, release feeds, skill marketplaces, our own comments), dedupe, score with the rubric, and write a shortlist for Kyle to approve. Use for "/helena-discover", "find topics", "what should we explain this week", or the weekly/monthly topic run.
 ---
 
-# /ts-discover
+# /helena-discover
 
 Produces `pipeline/discover/shortlist-<YYYY-WW>.md` (or `-hot-<date>.md`) and updates `pipeline/discover/topics.json`. It never creates videos.
 
@@ -45,5 +45,6 @@ sources: <urls>   risks: <unverified claim / licence / staleness>
 
 - Primary sources only for facts (the repo README, the paper, the release notes). Aggregators are signals, not sources.
 - Never score a topic high on relevance because *you* find it interesting; the test is whether a curious non-specialist would stop scrolling.
+- Write the candidate's one-sentence explanation the way Helena would say it; if it can't be said flatly and precisely, that's a signal about explainability.
 - A trending repo with no explainable mechanism (a list, a wrapper, a UI theme) is not a topic. Say so and move on.
 - Unattended runs write the shortlist and stop. Kyle picks; you don't promote anything to `briefed`.

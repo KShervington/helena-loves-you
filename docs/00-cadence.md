@@ -17,9 +17,9 @@ Hot topics that miss their window don't die — if the mechanism is interesting,
 
 | Day | Kyle | Agent |
 |---|---|---|
-| Mon | Approve this week's shortlist (10 min). Decide whether a hot slot fires. | `/ts-discover` ran over the weekend → shortlist waiting. Publisher posts the day's queued video. |
+| Mon | Approve this week's shortlist (10 min). Decide whether a hot slot fires. | `/helena-discover` ran over the weekend → shortlist waiting. Publisher posts the day's queued video. |
 | Tue–Thu | Review any hot-lane draft (15 min each): script first, then render. | Hot lane: brief → script → produce → QA → mark `ready_for_review`. Publisher posts daily. |
-| Fri | 20-min review: last week's numbers, hook winners, comment-mined topics. | `/ts-review` drafts the weekly review; proposes rubric/hook-library edits as a PR. |
+| Fri | 20-min review: last week's numbers, hook winners, comment-mined topics. | `/helena-review` drafts the weekly review; proposes rubric/hook-library edits as a PR. |
 
 ## Monthly rhythm
 

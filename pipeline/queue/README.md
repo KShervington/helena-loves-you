@@ -1,6 +1,6 @@
 # pipeline/queue
 
-One JSON file per video in `items/<slug>.json` (so approval PRs never conflict) is the source of truth for every video from `produced` onward; `_example.json` shows the shape. `/ts-produce` appends, `/ts-qa` and Kyle change status, `/ts-publish` reads and records results. Publishing logic and the approval gate are described in `docs/08-publishing-scheduling.md`.
+One JSON file per video in `items/<slug>.json` (so approval PRs never conflict) is the source of truth for every video from `produced` onward; `_example.json` shows the shape. `/helena-produce` appends, `/helena-qa` and Kyle change status, `/helena-publish` reads and records results. Publishing logic and the approval gate are described in `docs/08-publishing-scheduling.md`.
 
 ## Entry schema
 
@@ -11,7 +11,7 @@ One JSON file per video in `items/<slug>.json` (so approval PRs never conflict) 
     "lane": "evergreen",
     "format": "How X actually works",
     "status": "produced | qa_passed | ready_for_review | changes_requested | approved | scheduled | published | failed | killed",
-    "status_by": "ts-produce | ts-qa | kyle | ts-publish",
+    "status_by": "helena-produce | helena-qa | kyle | helena-publish",
     "status_at": "2026-11-12T18:02:00Z",
     "review_note": "",                                   // Kyle's one-liner on changes_requested
     "files": {
@@ -30,7 +30,7 @@ One JSON file per video in `items/<slug>.json` (so approval PRs never conflict) 
       "youtube":   { "id": null, "url": null, "posted_at": null, "attempts": 0, "error": null }
     },
     "followups": { "pinned_comment": false, "first_hour_replies": false },
-    "history": [ { "at": "…", "event": "produced", "by": "ts-produce" }, { "at": "…", "event": "approved", "by": "kyle" } ]
+    "history": [ { "at": "…", "event": "produced", "by": "helena-produce" }, { "at": "…", "event": "approved", "by": "kyle" } ]
 }
 ```
 
@@ -39,7 +39,7 @@ One JSON file per video in `items/<slug>.json` (so approval PRs never conflict) 
 - `status` also has `publishing`, `partial` (some platforms done) — set by the publisher.
 - Only **Kyle** sets `approved` (and `changes_requested` / `killed`). Agents set everything else.
 - `approved` requires `qa_passed` in history and a `sha256`. Any later change to the file resets the entry to `produced`.
-- `scheduled` = `approved` + `publish_at`. `/ts-publish --schedule-month` assigns slots; Kyle can edit dates by hand.
+- `scheduled` = `approved` + `publish_at`. `/helena-publish --schedule-month` assigns slots; Kyle can edit dates by hand.
 - The publisher processes an entry when `status ∈ {approved, scheduled}` and `publish_at ≤ now` (or `--slot` names it). It writes each platform's `id` the moment the platform returns one — idempotency depends on this.
 - `failed` is per platform; the entry stays `published` if ≥ 1 platform succeeded, with the failed platform flagged for retry/manual action.
 

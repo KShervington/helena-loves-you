@@ -22,7 +22,7 @@ Raw pulls go to `pipeline/analytics/<YYYY-WW>.json`; a flat `pipeline/analytics/
 
 Group by each of: **hook archetype**, **length bucket** (30–40 / 40–50 / 50–60), **format**, **lane**, **direction** (while the aesthetic test runs), **CTA type**, **posting slot**. Report median 3-s hold, completion, sends/reach, comments/reach. Don't conclude anything from < 5 videos per bucket — write "n/a (n=3)".
 
-## The weekly review (Fri, `/ts-review`)
+## The weekly review (Fri, `/helena-review`)
 
 1. The table.
 2. Per video: the steepest-drop timestamp and a one-line hypothesis (hook over-promised? body stalled at the second mechanism? caption too dense?). Fix the five seconds before the drop in the next similar video.

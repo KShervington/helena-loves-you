@@ -35,14 +35,18 @@ For each beat in `script.md`:
 
 That table is the shot list (`templates/shot-list.md`).
 
-## Reveal rules
+## Reveal rules (Helena)
 
-- One new element per spoken clause. Nothing else moves while it enters.
-- Primary element first and most prominent; secondaries stagger 40–80 ms behind.
-- Colour arrives last: the diagram builds in ink; the accent lands on the highlighted element when the narration reaches the point.
-- Dim to focus: when the narration zooms in on one part, the rest drops to `--muted`.
-- Objects are real things: move them, morph them, re-frame on them. Don't fade one out and another in at the same place.
-- Default to stillness. A frame that's done building holds still until the next clause.
+- One new element per spoken clause. Nothing else moves while it arrives.
+- Elements *arrive*: fade and settle over ~1.2 s with a flat ease. Nothing pops, scales from zero, bounces or overshoots.
+- Primary element first; secondaries stagger 120 ms behind. Reveal order = reading order = the order she says them.
+- Colour arrives last: the diagram builds in ink; the red lands on the highlighted element on the spoken word.
+- Dim to focus: when she zooms in on one part, the rest drops to `--muted`.
+- Objects persist: re-frame on them or move them slowly; never fade one out and another in at the same place.
+- Default to stillness. A finished frame holds until the next clause. Holds of 2–3 s are normal here.
+- Scene changes: dip through the ground, or a hard cut on a sentence boundary. No wipes, whips or zoom-throughs.
+- Everything centred unless the story needs otherwise.
+- The visualizer is always present and always honest: idle in silence, moving with her voice, never with music.
 
 ## Analogies on screen
 
@@ -50,16 +54,17 @@ The analogy gets its own small visual next to the mechanism, not instead of it: 
 
 ## Frame 0 / cover
 
-Hook text (≤ 2 lines, upper-middle band) + one diagram element already present (a node, a number, a sparkline). Three objects max. It must work as a 200-px-wide thumbnail.
+Meta line, visualizer, hook text (≤ 3 lines, centred) and at most one diagram element. Three objects max. Red appears once (the visualizer's centre, or one word). It must work as a 200-px-wide thumbnail.
 
 ## Last frame
 
-Mirrors frame 0: same ground, the diagram returned to its resolved state, the hook's key word on screen next to the CTA. Motion and music continue through the final frame.
+Mirrors frame 0: same ground, the diagram resolved, her request centred with one red clause. Motion (the visualizer) and the music bed continue through the final frame. Never the account name.
 
 ## Anti-patterns
 
 - Stock footage, screen recordings of other people's UIs, logos as decoration, emoji.
 - Text walls (> 8 words per line, > 2 lines).
-- Whole-frame pulsing, camera shake, particles, lens flares.
+- Whole-frame pulsing, camera shake, particles, lens flares, glows, rounded corners, springs.
+- Any image of Helena.
 - Diagrams that are only pretty: boxes with arrows that don't correspond to a real data flow.
 - A diagram that changes while a caption is being read.

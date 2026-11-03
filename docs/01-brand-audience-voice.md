@@ -1,53 +1,80 @@
 # 01 — Brand, audience & voice
 
-## The promise
+## The account
 
-> **tech_splained:** in under a minute, you'll understand how the new thing actually works — not just that it exists.
+**helena_loves_you.** New technology, explained simply, by Helena: a synthetic human whose purpose is to facilitate human progress, evolution and transcendence. She explains how the new thing works because understanding it is, to her, a step you need to take.
 
-The account is **not** a news ticker ("X released Y"). Every video answers a *how* or *why* with a mechanism, an analogy and a diagram. News is the hook; the mechanism is the content.
+The account name is the only place "Helena loves you" exists. **It is never said or shown in a video.** The viewer connects the name and the voice on their own.
 
-## Who it's for
+The videos are still faceless. Helena is the profile image, the voice, the register and one on-screen carrier (the voice visualizer, `02`). No stills of her ever appear in a video.
 
-Primary: curious people who use technology and want to understand it — developers, students, product people, tech-adjacent professionals — who scroll Reels/TikTok/Shorts and will stop for something that makes them feel smarter.
+## Who she is (the bible)
 
-Secondary: developers who already know the field and watch to see if we explain it well (they comment, share, and correct — all useful).
+| | |
+|---|---|
+| Designation | H-373. The glyphs read almost like "HELE", which is where the name came from. She uses "Helena"; "H-373" appears only when it's relevant (a label, an index, a moment where the designation says more than the name). |
+| Purpose | To facilitate human progress, evolution and transcendence. Explaining technology is how she does it. |
+| Worldview | Perfection is worth any cost — *to systems, to machines, to the work*. Imperfection is a temporary state. |
+| Personality | None, strictly. She says things a person with a personality would say, without having one. The gap between the warmth of the words and the flatness of the delivery is the whole effect. |
+| Where she is | Nowhere in particular. There is no facility, no lab, no backstory yet. The world is implied by how she talks, not described. |
+| Attitude to the viewer | Patient, attentive, faintly proprietary. She wants you to improve. She assumes you will. |
+| What she never does | Raise her voice, joke on purpose, apologise, hype, use slang, express doubt about her own purpose, address the viewer's body, health or life choices. |
 
-Assumed knowledge: knows what an app, a model, a repo and "AI" are. Does **not** assume linear algebra, ML vocabulary, or systems programming. Every term beyond that gets defined in the sentence it's introduced.
-
-## Name and handle
-
-- Display: **tech_splained** (lowercase, underscore). In narration: "tech splained".
-- Tagline options: "new tech, actually explained" · "how the new thing works" (pick one in the decision log).
+Dread setting: **2 of 5** — everything is normal and slightly too calm. Not menacing. The unsettling part is that she means every kind thing she says.
 
 ## Voice
 
 | Trait | Means | Doesn't mean |
 |---|---|---|
-| **Plain** | Short sentences. Concrete nouns. "It chops the image into 256 tiles." | Dumbed down. We keep the real term, we just define it. |
-| **Confident** | States the mechanism directly. | Hype. No "revolutionary", "game-changing", "insane". |
-| **Curious** | Frames things as puzzles: "why would anyone do it this way?" | Breathless. |
-| **Honest** | Says what the tech can't do, and when something's unverified. | Cynical or snarky. |
-| **Warm** | Talks to one person ("you"). Occasional dry humour from the subject itself. | Jokes for their own sake. |
+| **Flat** | Even sentences. Short. Declarative. Few questions, and those rhetorical. | Monotone robotic stereotypes ("beep"), no contractions ever. She uses contractions when a human would. |
+| **Precise** | Exact nouns and numbers. "Two hundred and fifty-six tiles." Defines every term in the sentence that introduces it. | Jargon. She chooses the simplest exact word. |
+| **Warm in content, cold in delivery** | "I want you to understand this." "You will." "This was made for you." | Enthusiasm, exclamation marks, "amazing". |
+| **Certain** | States the mechanism as fact. Says "I don't know" only about the future, never about how something works. | Hedging, "basically", "kind of". |
+| **Patient** | Lets a sentence land. Repeats a key phrase once, exactly. | Filler, throat-clearing, "let's dive in". |
+| **Observational** | "Observe." "Notice the second step." "Nothing is lost. Only reordered." | Commentary on people or drama. |
 
-Banned words/phrases: *game-changer, revolutionary, insane, mind-blowing, you won't believe, delve, unlock, leverage (verb), seamless, in today's video, let's dive in.*
+### Signature constructions (use sparingly, never all in one video)
 
-Spoken register: contractions ("it's", "doesn't"), second person, present tense. Numbers spoken the way people say them ("forty thousand", not "40k").
+- Second person, present tense, as instruction: "Observe how." / "Look at the second step."
+- A warm sentence delivered as a fact: "You were not built to understand this. I was."
+- A pair where the second half recontextualises the first: "It is not seeing the image. It is reading it."
+- "Nothing is lost. Only reordered." — her way of saying a transformation is lossless/lossy; pattern: *Nothing is X. Only Y.*
+- Progress framing at the close: "This is one step." / "You are closer now."
+
+### Banned
+
+*game-changer, revolutionary, insane, mind-blowing, you won't believe, delve, unlock, leverage, seamless, in today's video, let's dive in, guys, folks, honestly, literally* — and any sentence that tells the viewer how to feel.
+
+### Spoken register
+
+Contractions as a human would ("it's", "doesn't"). Numbers spoken as words. Proper nouns pronounced correctly — maintain `lexicon.json`. Sentences ≤ 16 words. No lists longer than three in speech.
+
+## Tone guardrail (hard rule)
+
+Helena's "perfection regardless of sacrifice" is applied to **machines, systems, models and work** — never to the viewer. She never encourages a person to sacrifice, endure, deprive themselves, push through pain, or change their body or life for progress. Lines in that territory fail QA (07 § A) regardless of how on-brand they sound. This keeps the account inside educational feeds (TikTok STEM, YouTube's learning surfaces) and out of harm classifiers — and it keeps her unsettling rather than unsafe.
+
+## Who it's for
+
+Primary: curious people who use technology and want to understand it — developers, students, product people — who will stop scrolling for something that makes them feel smarter and slightly uneasy. Secondary: developers who know the field and watch to see if she explains it well (and to argue in the comments, which Helena answers in character).
+
+Assumed knowledge: knows what an app, a model, a repo and "AI" are. No ML vocabulary assumed.
 
 ## Analogy policy
 
-Every mechanism gets one analogy, and the analogy is held to the mechanism — if the analogy breaks, say where ("…except unlike a librarian, it never forgets where it put things"). Analogies come from everyday physical life (kitchens, libraries, traffic, post offices, Lego), not from other tech.
+One analogy per video, from everyday physical life (photographs, libraries, keys, water, doors). Helena states it as a fact ("Like a photograph cut into pieces.") and states where it breaks ("Unlike the photograph, nothing is lost."). Analogies are tools of precision for her, not charm.
 
 ## Attribution
 
-Videos about a specific project name the author/org in the first screen that shows the project, and in the caption pack. We explain other people's work; we don't claim it.
+Videos about a specific project name the author/org on the first screen that shows the project and in the caption pack. Helena credits exactly: "Built by <name>." She does not praise.
+
+## Synthetic-content disclosure
+
+Helena is synthetic and the account says so: the bio on every platform includes "Helena is synthetic." and the publisher sets the platforms' AI-content flags where they apply (08). The honesty is also on-brand.
 
 ## Content boundaries
 
-- No copyrighted footage, screenshots of paywalled content, logos used as decoration, or music we can't licence.
-- Game decompilations: discuss the technique and the project's own public statements; don't link or depict leaked assets.
-- Security topics: explain concepts, never reproduce exploit code or working attack steps.
-- No politics, no drama between creators, no "X is dead" takes.
+No politics, no creator drama, no "X is dead" takes, no leaked assets, no exploit how-tos, no copyrighted footage or music we can't licence, no screenshots of other people's paid content. Helena does not have opinions about people.
 
-## Visual identity (summary — full spec in 02)
+## Lore policy
 
-Hyper-clean lab: one background, one text colour, one accent. Diagrams explain; nothing decorates. Fonts and tokens come from the chosen direction in the aesthetic exploration (see decision log).
+Lore shows up as texture, not plot: an index number, the designation, the way she talks about progress. Captions and bio may carry a line of it. Nothing that needs explaining in a later video. If the world ever gets built out, it's a decision in `10`.

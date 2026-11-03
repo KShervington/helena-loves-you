@@ -1,9 +1,9 @@
 ---
-name: ts-review
-description: Weekly tech_splained performance review — pull per-video metrics from the three platforms, compare hook archetypes, lengths and directions, mine comments for topic requests, and propose edits to the hook library, scoring rubric and cadence as a PR. Use for "/ts-review", "how did this week do", or the Friday scheduled run.
+name: helena-review
+description: Weekly helena_loves_you performance review — pull per-video metrics from the three platforms, compare hook archetypes, lengths and directions, mine comments for topic requests, and propose edits to the hook library, scoring rubric and cadence as a PR. Use for "/helena-review", "how did this week do", or the Friday scheduled run.
 ---
 
-# /ts-review [--week YYYY-WW]
+# /helena-review [--week YYYY-WW]
 
 Read first: `docs/09-analytics-iteration.md`, `pipeline/queue/items/*.json`, last week's `docs/reviews/`.
 

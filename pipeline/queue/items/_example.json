@@ -4,7 +4,7 @@
   "lane": "evergreen",
   "format": "How X actually works",
   "status": "ready_for_review",
-  "status_by": "ts-qa",
+  "status_by": "helena-qa",
   "status_at": "2026-11-12T18:02:00Z",
   "review_note": "",
   "files": {
@@ -55,12 +55,12 @@
     {
       "at": "2026-11-12T17:40:00Z",
       "event": "produced",
-      "by": "ts-produce"
+      "by": "helena-produce"
     },
     {
       "at": "2026-11-12T18:02:00Z",
       "event": "qa_passed",
-      "by": "ts-qa"
+      "by": "helena-qa"
     }
   ]
 }
