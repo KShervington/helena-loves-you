@@ -1,6 +1,6 @@
 # Aesthetic exploration
 
-**Current:** `helena.html` — the Helena palette with three type families (`?type=geometric|grotesk|eurostile`) × `?frame=hook|diagram`, plus `?frame=viz` showing the three voice-visualizer candidates. `node render-helena.mjs` (Playwright) writes `frames/<type>-<frame>.jpg` and `frames/helena-board.jpg`.
+**Current:** `helena.html` — the decided direction (true white, shadowed cards, Michroma + Inter, grid visualizer); `?type=` and `?frame=viz` still show the alternatives that lost. `node render-helena.mjs` (Playwright) writes `frames/eurostile-*.jpg` and `frames/helena-final.jpg`. `frames/helena-board.jpg` is the board the type/visualizer decision was made from.
 
 Also here: `helena_aesthetic.md` (Kyle's description of the direction and its film/game references; the `ref_photos/` it links are on Kyle's machine, not in the repo) and `helena-reference-sheet.png` (character sheet — profile image only; never used inside a video).
 

@@ -7,11 +7,11 @@ Research-style: options explored, the test that decides, the decision. Status: *
 - tech_splained → **helena_loves_you**. Same job (explain new technology simply, with high virality potential), now fronted by Helena: a synthetic human whose purpose is to facilitate human progress, evolution and transcendence. Profile image = the character sheet; videos stay faceless; her voice, register and the voice visualizer carry her. Dread setting 2/5. The account name never appears in a video. Lore: designation H-373 (≈ "HELE" → Helena); no facility, no backstory for now. See `01`.
 - Package renamed: repos `helena-loves-you` + `helena-media-library`; skills `/helena-*`; CSS prefix `hl-`.
 
-## D-01 Aesthetic direction — decided 2026-11-03 (palette, ground, motion); D-01b/c open
+## D-01 Aesthetic direction — decided 2026-11-03
 
-- Replaced the five-way test. Direction: uncanny clinical retrofuturism — off-white `#F0F0F2` ground, white surfaces, near-black ink, one red `#D0111B`; centred symmetric composition; slow flat motion; frame chrome with the 3×3 dot mark. See `02`.
-- **D-01b type family — open:** geometric (Jost) · grotesk (Inter Tight + Plex Mono) · eurostile-like (Michroma + Inter). Board: `docs/aesthetics/frames/helena-board.jpg`. Kyle picks.
-- **D-01c voice-visualizer style — open:** grid (the uniform's 3×3 mark, centre red) · trace (one red line) · disc (red disc in rings). Same board. Kyle picks. My read: grid is the most *hers* (lore-linked) and the least cliché; disc has the strongest dread and the strongest HAL association; trace reads most "instrument".
+- Replaced the five-way test. Direction: uncanny clinical retrofuturism — **true-white ground** (Kyle: off-white felt wrong), white cards lifted by a soft drop shadow for depth, near-black ink, one red `#D0111B`; centred symmetric composition; slow flat motion; frame chrome with the 3×3 dot mark. See `02`.
+- **D-01b type family — decided 2026-11-03: eurostile-like** (Michroma headings/labels + Inter captions). Board that decided it: `docs/aesthetics/frames/helena-board.jpg`; final frames: `helena-final.jpg`.
+- **D-01c voice-visualizer style — decided 2026-11-03: grid** (the uniform's 3×3 mark, centre dot red). Trace and disc remain in the asset for reference.
 - The five original directions stay in the library tokens as archive (`hl-blueprint` …).
 
 ## D-02 Helena's voice (TTS) — open, now a one-way door
@@ -56,7 +56,7 @@ Research-style: options explored, the test that decides, the decision. Status: *
 
 ## D-08 Wordmark — open
 
-- The 3×3 dot mark (from the back of her uniform) is the working logo and the visualizer base. No tagline: the account name does the work. A wordmark follows D-01b.
+- The 3×3 dot mark (from the back of her uniform) is the working logo and the visualizer base. No tagline: the account name does the work. Next: a Michroma wordmark to pair with the mark.
 
 ## D-09 Docs location — decided 2026-11-01
 
