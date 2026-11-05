@@ -9,8 +9,10 @@ script = re.sub(r"^#.*$", "", open(os.path.join(os.path.dirname(__file__), "scri
 norm = lambda s: re.sub(r"[^a-z0-9 ]", "", s.lower().replace("—", " ")).split()
 ref = " ".join(norm(script))
 asr = WhisperModel("medium.en", device="cpu", compute_type="int8")
+import glob
+dirs = [d for a in sys.argv[1:] for d in (sorted(glob.glob(a)) or [a])]   # PowerShell/cmd don't expand globs
 rows = []
-for d in sys.argv[1:]:
+for d in dirs:
     j = json.load(open(os.path.join(d, "narration.json")))
     segs, _ = asr.transcribe(os.path.join(d, "narration.wav"))
     hyp = " ".join(norm(" ".join(s.text for s in segs)))

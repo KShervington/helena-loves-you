@@ -1,6 +1,8 @@
 # TTS bake-off
 
-Renders the same ~55-second script — in Helena's register — with each candidate voice, collects word timestamps, and scores precision, flatness, consistency and timing. This picks **Helena's one voice for the life of the account** (D-02), so weight consistency above everything. Runs on Kyle's Mac (models need Hugging Face / provider access; this container can't reach them). Evidence for the candidate list: `docs/research/audio-tts-music-sfx.md`.
+Renders the same ~55-second script — in Helena's register — with each candidate voice, collects word timestamps, and scores precision, flatness, consistency and timing. This picks **Helena's one voice for the life of the account** (D-02), so weight consistency above everything.
+
+Runs on **Windows, macOS or Linux**. Needs Python 3.10+, Node 18+, and `ffmpeg` on PATH. An NVIDIA GPU (CUDA) makes Chatterbox/Qwen3-TTS/alignment much faster; Apple Silicon uses MPS/MLX; CPU works for everything but is slow for Chatterbox. On Windows, either run natively (commands below) or in **WSL2 Ubuntu** — WSL2 is the cleanest option because the rest of the production pipeline (`audio.sh`, `encode.sh`) is bash, and CUDA passes through to WSL2. Runs on Kyle's Mac (models need Hugging Face / provider access; this container can't reach them). Evidence for the candidate list: `docs/research/audio-tts-music-sfx.md`.
 
 | # | Candidate | Licence | Timestamps | Runner |
 |---|---|---|---|---|
@@ -12,11 +14,26 @@ Renders the same ~55-second script — in Helena's register — with each candid
 
 ## Run
 
+macOS / Linux / WSL2:
+
 ```bash
 cd tests/tts-bakeoff
 python3 -m venv .venv && source .venv/bin/activate
 pip install kokoro soundfile chatterbox-tts ctc-forced-aligner faster-whisper jiwer   # Mac: see each runner's header for MLX variants
 export ELEVENLABS_API_KEY=…
+```
+
+Windows (PowerShell, native):
+
+```powershell
+cd tests\tts-bakeoff
+py -m venv .venv; .\.venv\Scripts\Activate.ps1
+pip install torch --index-url https://download.pytorch.org/whl/cu124    # NVIDIA GPU; skip for CPU-only
+pip install kokoro soundfile chatterbox-tts ctc-forced-aligner faster-whisper jiwer
+winget install ffmpeg; winget install eSpeak-NG.eSpeak-NG                # Kokoro needs espeak-ng for out-of-dictionary words
+$env:ELEVENLABS_API_KEY = "…"
+# then the same commands as below with `python` instead of `python3`
+```
 
 node elevenlabs.mjs script.txt out/eleven-v4   --model eleven_v4 --voice <voice_id>
 node elevenlabs.mjs script.txt out/eleven-mlv2 --model eleven_multilingual_v2 --voice <voice_id>
@@ -25,7 +42,7 @@ python3 kokoro.py script.txt out/kokoro-am_adam  --voice am_adam
 python3 chatterbox.py script.txt out/chatterbox [--ref reference.wav]
 python3 align.py out/chatterbox/narration.wav script.txt out/chatterbox/narration.json   # forced alignment for engines without timestamps
 
-python3 score.py out/*            # WER (faster-whisper), duration variance across 3 renders, timestamp sanity, cost notes
+python3 score.py out/*            # WER (faster-whisper), duration variance across 3 renders, timestamp sanity (globs expand on any shell)
 ```
 
 Each runner writes `narration.wav` + `narration.json` (`{ duration, words: [{ w, s, e }], beats: [{ id, s }], provider, model, voice, rendered_at }`) — the exact format the compositions consume — so the winner's output drops straight into `/helena-produce`. Run each candidate three times (`-1`, `-2`, `-3`) for the consistency score.
