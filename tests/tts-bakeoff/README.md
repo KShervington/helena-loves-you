@@ -35,17 +35,32 @@ $env:ELEVENLABS_API_KEY = "…"
 # then the same commands as below with `python` instead of `python3`
 ```
 
-node elevenlabs.mjs script.txt out/eleven-v4   --model eleven_v4 --voice <voice_id>
-node elevenlabs.mjs script.txt out/eleven-mlv2 --model eleven_multilingual_v2 --voice <voice_id>
+node elevenlabs.mjs script.txt out/eleven-v4-flatcalm-1 --model eleven_v4 --voice <voice_id>                 # tags default to [flat][calm]
+node elevenlabs.mjs script.txt out/eleven-v4-notags-1   --model eleven_v4 --voice <voice_id> --tags ""
+node elevenlabs.mjs script.txt out/eleven-mlv2-1        --model eleven_multilingual_v2 --voice <voice_id>   # no tags on v2
 python3 kokoro.py script.txt out/kokoro-af_heart --voice af_heart
 python3 kokoro.py script.txt out/kokoro-am_adam  --voice am_adam
-python3 chatterbox.py script.txt out/chatterbox [--ref reference.wav]
+python3 chatterbox.py script.txt out/chatterbox-e035-1 [--ref reference.wav]        # exaggeration 0.35 default; try --exaggeration 0.3
 python3 align.py out/chatterbox/narration.wav script.txt out/chatterbox/narration.json   # forced alignment for engines without timestamps
 
 python3 score.py out/*            # WER (faster-whisper), duration variance across 3 renders, timestamp sanity (globs expand on any shell)
 ```
 
 Each runner writes `narration.wav` + `narration.json` (`{ duration, words: [{ w, s, e }], beats: [{ id, s }], provider, model, voice, rendered_at }`) — the exact format the compositions consume — so the winner's output drops straight into `/helena-produce`. Run each candidate three times (`-1`, `-2`, `-3`) for the consistency score.
+
+## Flatness — how each engine is steered
+
+`script.txt` is kept clean; each runner applies Helena's delivery its own way and records it under `delivery` in `narration.json`, so the winning settings can be frozen in `VOICE.md`.
+
+| Engine | Lever | Default in the runner | What to vary |
+|---|---|---|---|
+| ElevenLabs v3 / v4 | inline audio tags prepended to every beat (`--tags`), plus `stability` (higher = less expressive), `style 0`, `speed 0.95` | `[flat][calm]`, stability 0.8 | render `--tags ""` vs `[flat][calm]` vs `[flat][calm][quiet]`; stability 0.8 vs 1.0. Tags are the first thing to check for *consistency across takes* |
+| ElevenLabs Multilingual v2 | no tags (ignored/misread, never sent); `stability` 0.8–1.0, `style 0` | stability 0.8 | stability only |
+| Voice Design (v4) | the design prompt itself: "calm, precise, emotionless female narrator, late twenties, close-mic, even pace, no vocal fry, no smile" | — | two prompt variants, then the tags above |
+| Chatterbox Turbo | `--exaggeration` (0.3–0.4 flat) and `--cfg`; a flat 10–15 s reference clip | 0.35 / 0.5 | 0.3 vs 0.4; with vs without a reference |
+| Kokoro | voice choice and `--speed` ≤ 1.0 only | af_heart, 0.95 | af_heart / af_bella / bf_emma |
+
+Name output folders by setting so `score.py` can group them: `out/eleven-v4-flatcalm-1`, `out/eleven-v4-notags-1`, `out/chatterbox-e030-1`, …
 
 ## Judge (blind, 1–5 each)
 
