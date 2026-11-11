@@ -1,0 +1,882 @@
+{
+ "version": 1,
+ "generated_at": "2026-11-11T16:40:00Z",
+ "topics": [
+  {
+   "id": "github:NotRexed/Hookshot",
+   "aliases": [
+    "github:valentderah/totk-pc-recomp",
+    "github:jhaizhou-ops/S2Arm"
+   ],
+   "title": "Switch recompilation wave (Hookshot / totk-pc-recomp / S2Arm)",
+   "one_liner": "These are not emulators: the game's ARM64 code is translated to C once and compiled to a native binary; graphics calls are replayed on Vulkan/Metal; no game data shipped.",
+   "category": "decomp",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 7330,
+      "created_at": "2026-11-05"
+     },
+     "url": "https://github.com/NotRexed/Hookshot"
+    },
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 6635,
+      "created_at": "2026-10-29"
+     },
+     "url": "https://github.com/valentderah/totk-pc-recomp"
+    },
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 2569,
+      "created_at": "2026-11-08"
+     },
+     "url": "https://github.com/jhaizhou-ops/S2Arm"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 5,
+    "timeliness": 5,
+    "novelty": 4,
+    "explainability": 4,
+    "visualizability": 5,
+    "relevance": 4,
+    "total": 4.55,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "NotRexed; valentderah; jhaizhou-ops (+ Ryujinx, nxnative, hactool lineage)",
+    "url": "https://github.com/NotRexed/Hookshot"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "legal hedge: technique only, no dumps/footage; FPS claims unverified",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:storytold/craft-anything",
+   "aliases": [],
+   "title": "craft-anything",
+   "one_liner": "Rebuilds a website, app or game clean-room: study (\u2248320 inspection tools) \u2192 build (drives your own coding agent) \u2192 check (diffs rebuild vs capture) \u2192 repeat.",
+   "category": "dev-tool",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 28053,
+      "created_at": "2026-10-31"
+     },
+     "url": "https://github.com/storytold/craft-anything"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 5,
+    "timeliness": 4,
+    "novelty": 4,
+    "explainability": 4,
+    "visualizability": 5,
+    "relevance": 4,
+    "total": 4.4,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "ArtCraft Team (storytold)",
+    "url": "https://github.com/storytold/craft-anything"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "early alpha; verify tool count in docs/tools.md; pair with BLA as part 2",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:DIYgod/pinky",
+   "aliases": [],
+   "title": "pinky",
+   "one_liner": "Lets AI agents use a real phone over MCP; a gateway between agent and phone enforces rules in code \u2014 approvals block, tap targets are re-checked, password/OTP fields are off-limits.",
+   "category": "dev-tool",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 1846,
+      "created_at": "2026-11-06"
+     },
+     "url": "https://github.com/DIYgod/pinky"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 5,
+    "novelty": 4,
+    "explainability": 5,
+    "visualizability": 5,
+    "relevance": 5,
+    "total": 4.35,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "DIYgod",
+    "url": "https://github.com/DIYgod/pinky"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "PILOT candidate; pre-alpha; latency figures author-run",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider",
+   "aliases": [],
+   "title": "Decision models instead of LLM calls",
+   "one_liner": "A small cheap scoring model handles routine yes/no decisions; the frontier model is called only below a confidence threshold set by the cost of a wrong answer. Four teams published it in one week.",
+   "category": "infra",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 714
+     },
+     "url": "https://news.ycombinator.com/item?id=50436640"
+    },
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 600
+     },
+     "url": "https://news.ycombinator.com/item?id=50397429"
+    },
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 0
+     },
+     "url": "https://news.ycombinator.com/item?id=50421155"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 4,
+    "timeliness": 5,
+    "novelty": 4,
+    "explainability": 5,
+    "visualizability": 4,
+    "relevance": 3,
+    "total": 4.25,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "Amazon/Strands; Hightouch; PostHog; Hugging Face",
+    "url": "https://strandsagents.com/blog/amazon-saves-millions-replacing-sonnet-with-strands-decider/"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "attribute savings claims; name the pattern not the vendors",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:openai.com/index/a-thousand-fewer-paths-to-root",
+   "aliases": [],
+   "title": "OpenAI kernel bug\u2192patch pipeline",
+   "one_liner": "Reproduce 1,724 Linux kernel crashes \u2192 prove 948 can be escalated to root \u2192 write and validate patches, each stage an agent with a verifier behind it.",
+   "category": "model",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 489
+     },
+     "url": "https://news.ycombinator.com/item?id=50372929"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 4,
+    "timeliness": 5,
+    "novelty": 4,
+    "explainability": 4,
+    "visualizability": 4,
+    "relevance": 4,
+    "total": 4.15,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "OpenAI",
+    "url": "https://openai.com/index/a-thousand-fewer-paths-to-root"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "security: pipeline only, never exploit detail; numbers verbatim from the post",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:heydamir/unslop",
+   "aliases": [],
+   "title": "unslop",
+   "one_liner": "A skill that redesigns AI-looking UI in three phases: audit the slop markers, agree a direction, then nine fix passes in a fixed order.",
+   "category": "skill",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 14373,
+      "created_at": "2026-10-29"
+     },
+     "url": "https://github.com/heydamir/unslop"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 5,
+    "timeliness": 4,
+    "novelty": 3,
+    "explainability": 4,
+    "visualizability": 4,
+    "relevance": 4,
+    "total": 4.1,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "Damir Sokolovsky (@heydamir)",
+    "url": "https://github.com/heydamir/unslop"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "CC BY 4.0 \u2014 credit required",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:8rank.ai/game/apple-intelligence-personal-knowledge-graph",
+   "aliases": [],
+   "title": "Apple Intelligence personal knowledge graph",
+   "one_liner": "On-device Apple Intelligence builds a scored graph of the people in your life from messages and photos; a reverse-engineering post exposed the labels, including a family-member classifier.",
+   "category": "other",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 863
+     },
+     "url": "https://news.ycombinator.com/item?id=50403097"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 4,
+    "timeliness": 4,
+    "novelty": 4,
+    "explainability": 4,
+    "visualizability": 4,
+    "relevance": 5,
+    "total": 4.1,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "8rank.ai (reverse-engineering write-up)",
+    "url": "https://8rank.ai/game/apple-intelligence-personal-knowledge-graph"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "single source \u2014 verify every label; observational tone",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:maurycyz.com/projects/fading",
+   "aliases": [],
+   "title": "TV signal through walls (RF fading as motion sensor)",
+   "one_liner": "Broadcast signals reach an antenna by many paths; a moving body changes how they add up, and that change alone reveals movement behind a wall.",
+   "category": "other",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "evergreen",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 270
+     },
+     "url": "https://news.ycombinator.com/item?id=50436410"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 3,
+    "novelty": 4,
+    "explainability": 5,
+    "visualizability": 5,
+    "relevance": 5,
+    "total": 4.05,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "maurycyz",
+    "url": "https://maurycyz.com/projects/fading/"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "2025 post resurfaced; evergreen",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:deepmind.google/blog/introducing-alphaproof-code",
+   "aliases": [],
+   "title": "AlphaProof Code",
+   "one_liner": "Agents wrote ~3M lines of Lean \u2014 machine-checked proofs that Signal's core encryption does what it claims \u2014 verified by a tiny trusted checker, instead of testing.",
+   "category": "model",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 662
+     },
+     "url": "https://news.ycombinator.com/item?id=50439193"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 4,
+    "timeliness": 5,
+    "novelty": 5,
+    "explainability": 3,
+    "visualizability": 4,
+    "relevance": 3,
+    "total": 4.0,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "Google DeepMind",
+    "url": "https://deepmind.google/blog/introducing-alphaproof-code/"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "explainability gate: test-vs-proof must land in one analogy",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:synchopate/llama-modchip",
+   "aliases": [],
+   "title": "Llama-modchip (MoE on CPU)",
+   "one_liner": "A mixture-of-experts model activates few experts per token; the runner keeps active experts in RAM and streams the rest from disk, fitting 284B on 64 GB.",
+   "category": "infra",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "shortlisted",
+   "lane": "evergreen",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 483
+     },
+     "url": "https://news.ycombinator.com/item?id=50411961"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 4,
+    "novelty": 3,
+    "explainability": 5,
+    "visualizability": 5,
+    "relevance": 4,
+    "total": 3.95,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "synchopate",
+    "url": "https://github.com/synchopate/llama-modchip"
+   },
+   "shortlist": "shortlist-2026-46.md",
+   "project_folder": null,
+   "notes": "repo NOT verified this run",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "shortlisted",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:qybaihe/bla",
+   "aliases": [],
+   "title": "BLA \u2014 Blind LLM Agents",
+   "one_liner": "Hardens shipped artefacts against reverse-engineering agents with three layers: poison (canaries), exhaust (inflate past the agent's limits), hallucinate (ambiguous analyser output, runtime unchanged).",
+   "category": "dev-tool",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 5264,
+      "created_at": "2026-10-25"
+     },
+     "url": "https://github.com/qybaihe/bla"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 4,
+    "timeliness": 4,
+    "novelty": 4,
+    "explainability": 3,
+    "visualizability": 4,
+    "relevance": 3,
+    "total": 3.7,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "qybaihe (npm bla-agents)",
+    "url": "https://github.com/qybaihe/bla"
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "part 2 of craft-anything",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:anthropic.com/research/components-of-agent-memory",
+   "aliases": [],
+   "title": "Components of Agent Memory",
+   "one_liner": "Agents write raw experience while working, then consolidate it into durable memory while idle \u2014 a split that mirrors sleep.",
+   "category": "model",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "evergreen",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 187
+     },
+     "url": "https://news.ycombinator.com/item?id=50402212"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 4,
+    "novelty": 4,
+    "explainability": 4,
+    "visualizability": 4,
+    "relevance": 4,
+    "total": 3.75,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "Anthropic",
+    "url": "https://www.anthropic.com/research/components-of-agent-memory"
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:sshhole.com",
+   "aliases": [],
+   "title": "OpenSSH password-length bypass",
+   "one_liner": "A length-handling slip in a 30-year-old auth path let some accounts in without the right password on musl systems.",
+   "category": "other",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 2999
+     },
+     "url": "https://news.ycombinator.com/item?id=50378228"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 5,
+    "timeliness": 5,
+    "novelty": 3,
+    "explainability": 4,
+    "visualizability": 3,
+    "relevance": 4,
+    "total": 4.1,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "disclosure site / OpenSSH 10.6p2",
+    "url": "https://sshhole.com"
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "content-boundary review: conceptual only; Kyle's call",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "request:github-star-farm-wave-2026-11-06",
+   "aliases": [],
+   "title": "GitHub star-farm wave",
+   "one_liner": "\u224840 'desktop installer' repos created 2026-11-06 with ~1,300 identical stars \u2014 how star farming works and how to spot it.",
+   "category": "other",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "hot",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 1300,
+      "created_at": "2026-11-06"
+     },
+     "url": "https://github.com/(cluster)"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 5,
+    "novelty": 3,
+    "explainability": 5,
+    "visualizability": 5,
+    "relevance": 4,
+    "total": 4.1,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "\u2014",
+    "url": ""
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "wildcard from our own pull; never name the repos",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "url:e-means.github.io",
+   "aliases": [],
+   "title": "E-means",
+   "one_liner": "Changes k-means' centroid update so clusters converge in a tenth of the passes.",
+   "category": "paper",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "evergreen",
+   "signals": [
+    {
+     "source": "hn_algolia",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "points": 503
+     },
+     "url": "https://news.ycombinator.com/item?id=50429734"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 4,
+    "novelty": 3,
+    "explainability": 4,
+    "visualizability": 5,
+    "relevance": 2,
+    "total": 3.55,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "E-means authors",
+    "url": "https://e-means.github.io/"
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  },
+  {
+   "id": "github:haydenschmitty/floorplan",
+   "aliases": [],
+   "title": "floorplan",
+   "one_liner": "Dependency-free scripts build a dependency graph of a codebase; the model only names the parts in plain English; rendered as an interactive map.",
+   "category": "dev-tool",
+   "tags": [],
+   "first_seen_at": "2026-11-11T16:40:00Z",
+   "last_updated_at": "2026-11-11T16:40:00Z",
+   "status": "candidate",
+   "lane": "evergreen",
+   "signals": [
+    {
+     "source": "github_search_new",
+     "observed_at": "2026-11-11T16:40:00Z",
+     "metrics": {
+      "stars": 3565,
+      "created_at": "2026-10-27"
+     },
+     "url": "https://github.com/haydenschmitty/floorplan"
+    }
+   ],
+   "velocity": {},
+   "scores": {
+    "velocity": 3,
+    "timeliness": 3,
+    "novelty": 3,
+    "explainability": 4,
+    "visualizability": 5,
+    "relevance": 3,
+    "total": 3.5,
+    "scored_at": "2026-11-11T16:40:00Z"
+   },
+   "credit": {
+    "author": "Hayden Smith",
+    "url": "https://github.com/haydenschmitty/floorplan"
+   },
+   "shortlist": null,
+   "project_folder": null,
+   "notes": "",
+   "history": [
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "created",
+     "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:40:00Z",
+     "event": "candidate",
+     "by": "helena-discover"
+    }
+   ]
+  }
+ ]
+}
