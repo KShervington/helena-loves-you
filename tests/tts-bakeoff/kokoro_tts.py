@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Kokoro-82M (Apache-2.0) → narration.wav + narration.json with native word timestamps.
-  python3 kokoro.py script.txt outDir [--voice af_heart] [--speed 0.95] [--lexicon lexicon.json]
+  python3 kokoro_tts.py script.txt outDir [--voice af_heart] [--speed 0.95] [--lexicon lexicon.json]
 Delivery (Helena = flat): Kokoro has no tags or expressiveness knob — flatness comes from the voice (af_heart / af_bella / bf_emma read calmest) and speed ≤ 1.0.
 pip install kokoro soundfile   (first run downloads hexgrad/Kokoro-82M; Mac/CPU is fine). Untested in the cloud container (no HF access)."""
 import sys, os, re, json, datetime

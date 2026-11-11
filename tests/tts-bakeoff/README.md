@@ -8,8 +8,8 @@ Runs on **Windows, macOS or Linux**. Needs Python 3.10+, Node 18+, and `ffmpeg` 
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------------------------- | -------------------- | ----------------------------------------------------------- |
 | 0   | **Designed voice** — ElevenLabs Voice Design (prompt: "calm, precise, emotionless female narrator, late twenties, close-mic, no vocal fry, no smile") or Qwen3-TTS VoiceDesign | paid = commercial / Apache | native / aligned     | `elevenlabs.mjs` with the designed voice id / `qwen3tts.py` |
 | 1   | ElevenLabs Eleven v4 + Multilingual v2 (Creator plan), stock narrators                                                                                                         | paid = commercial          | native (char → word) | `elevenlabs.mjs`                                            |
-| 2   | Chatterbox Turbo (local, MIT)                                                                                                                                                  | MIT                        | via forced alignment | `chatterbox.py` + `align.py`                                |
-| 3   | Kokoro-82M (local, Apache-2.0)                                                                                                                                                 | Apache                     | native               | `kokoro.py`                                                 |
+| 2   | Chatterbox Turbo (local, MIT)                                                                                                                                                  | MIT                        | via forced alignment | `chatterbox_tts.py` + `align.py`                                |
+| 3   | Kokoro-82M (local, Apache-2.0)                                                                                                                                                 | Apache                     | native               | `kokoro_tts.py`                                                 |
 | 4   | Qwen3-TTS 1.7B VoiceDesign (optional)                                                                                                                                          | Apache                     | via forced alignment | `qwen3tts.py` (not written — add if the Mac setup is < 1 h) |
 
 ## Run
@@ -39,9 +39,9 @@ $env:ELEVENLABS_API_KEY = "…"
 node elevenlabs.mjs script.txt out/eleven-v4-flatcalm-1 --model eleven_v4 --voice <voice_id>                 # tags default to [flat][calm]
 node elevenlabs.mjs script.txt out/eleven-v4-notags-1   --model eleven_v4 --voice <voice_id> --tags ""
 node elevenlabs.mjs script.txt out/eleven-mlv2-1        --model eleven_multilingual_v2 --voice <voice_id>   # no tags on v2
-python3 kokoro.py script.txt out/kokoro-af_heart --voice af_heart
-python3 kokoro.py script.txt out/kokoro-am_adam  --voice am_adam
-python3 chatterbox.py script.txt out/chatterbox-e035-1 [--ref reference.wav]        # exaggeration 0.35 default; try --exaggeration 0.3
+python3 kokoro_tts.py script.txt out/kokoro-af_heart --voice af_heart
+python3 kokoro_tts.py script.txt out/kokoro-am_adam  --voice am_adam
+python3 chatterbox_tts.py script.txt out/chatterbox-e035-1 [--ref reference.wav]        # exaggeration 0.35 default; try --exaggeration 0.3
 python3 align.py out/chatterbox/narration.wav script.txt out/chatterbox/narration.json   # forced alignment for engines without timestamps
 
 python3 score.py out/*            # WER (faster-whisper), duration variance across 3 renders, timestamp sanity (globs expand on any shell)

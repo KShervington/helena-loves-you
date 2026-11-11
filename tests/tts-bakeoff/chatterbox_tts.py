@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Chatterbox Turbo (MIT) → narration.wav (no native timestamps: run align.py afterwards).
-  python3 chatterbox.py script.txt outDir [--ref reference.wav] [--exaggeration 0.35] [--cfg 0.5]
+  python3 chatterbox_tts.py script.txt outDir [--ref reference.wav] [--exaggeration 0.35] [--cfg 0.5]
 Delivery (Helena = flat): there are no tags; flatness is `exaggeration` (0.3–0.4 flat, 0.5 neutral, 0.7+ expressive) and `cfg` (0.5 default;
 lower = slower, more drawn-out). Try 0.3 / 0.5 and 0.4 / 0.5. A 10–15 s reference recorded flat helps more than any knob.
 pip install chatterbox-tts   (Mac: prefer the MLX port, see the research doc). Untested in the cloud container."""
