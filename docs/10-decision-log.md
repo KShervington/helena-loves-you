@@ -14,13 +14,10 @@ Research-style: options explored, the test that decides, the decision. Status: *
 - **D-01c voice-visualizer style — decided 2026-11-03: grid** (the uniform's 3×3 mark, centre dot red). Trace and disc remain in the asset for reference.
 - The five original directions stay in the library tokens as archive (`hl-blueprint` …).
 
-## D-02 Helena's voice (TTS) — open, now a one-way door
+## D-02 Helena's voice (TTS) — decided 2026-11-09
 
-- Requirements changed with D-00: one fixed voice for the life of the account; flat affect with precise diction; warm words, cold delivery; zero drift across hundreds of renders; native or alignable word timestamps; commercial licence; not a clone of a real person without consent.
-- Options: a **designed** voice (ElevenLabs Voice Design from a text prompt, or Qwen3-TTS VoiceDesign — both give a bespoke voice nobody else has) · a locked stock voice (ElevenLabs v4 / Multilingual v2, Creator $22/mo) · local open models (Chatterbox Turbo MIT, Kokoro-82M Apache).
-- Test: `tests/tts-bakeoff/` with the Helena script (`script.txt` is now in her register) — judge flatness/precision/consistency over the old "engagement" criterion; render 3× each and listen for drift.
-- Decision rule: pick for consistency and precision first; cost second. Once chosen, the voice id/prompt and settings are frozen in the library (`assets/tools/narration/VOICE.md`).
-- Decision: —
+- **ElevenLabs, voice `AWVBEFLEB7GbpYVc15fZ`** — designed by Kyle in the ElevenLabs portal after the bake-off; frozen in `helena-media-library/assets/tools/narration/VOICE.md` together with the delivery settings (model, audio tags, stability, speed). One voice for the life of the account; no per-video tuning. Model and exact delivery settings to be confirmed in VOICE.md.
+- Consequences: Creator plan (commercial licence) is the running cost; word timestamps come natively from `with-timestamps`; the open-source runners stay in the library for emergencies only.
 
 ## D-03 Renderer — open
 
