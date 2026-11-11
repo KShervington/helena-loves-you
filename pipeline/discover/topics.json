@@ -137,8 +137,8 @@
    "category": "dev-tool",
    "tags": [],
    "first_seen_at": "2026-11-11T16:40:00Z",
-   "last_updated_at": "2026-11-11T16:40:00Z",
-   "status": "shortlisted",
+   "last_updated_at": "2026-11-11T17:05:00Z",
+   "status": "storyboarded",
    "lane": "hot",
    "signals": [
     {
@@ -167,7 +167,7 @@
     "url": "https://github.com/DIYgod/pinky"
    },
    "shortlist": "shortlist-2026-46.md",
-   "project_folder": null,
+   "project_folder": "2026-11-11_Pinky-The-Gate",
    "notes": "PILOT candidate; pre-alpha; latency figures author-run",
    "history": [
     {
@@ -179,6 +179,21 @@
      "at": "2026-11-11T16:40:00Z",
      "event": "shortlisted",
      "by": "helena-discover"
+    },
+    {
+     "at": "2026-11-11T16:45:00Z",
+     "event": "approved",
+     "by": "kyle"
+    },
+    {
+     "at": "2026-11-11T17:05:00Z",
+     "event": "scripted",
+     "by": "helena-script"
+    },
+    {
+     "at": "2026-11-11T17:05:00Z",
+     "event": "storyboarded",
+     "by": "helena-script"
     }
    ]
   },
