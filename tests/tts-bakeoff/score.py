@@ -27,4 +27,4 @@ for r in rows: print(f"{r[0]:32} {str(r[1]):12} {str(r[2]):22} {str(r[3]):14} {r
 groups = {}
 for r in rows: groups.setdefault(re.sub(r"-\d$", "", r[0]), []).append(r[4])
 for g, ds in groups.items():
-    if len(ds) > 1: print(f"consistency {g}: durations {ds} → stdev {statistics.stdev(ds):.2f}s")
+    if len(ds) > 1: print(f"consistency {g}: durations {ds} -> stdev {statistics.stdev(ds):.2f}s")
