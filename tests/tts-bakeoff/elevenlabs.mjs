@@ -154,4 +154,4 @@ fs.writeFileSync(
   path.join(out, "narration.json.js"),
   "window.NARRATION = " + JSON.stringify(json) + ";\n",
 );
-console.log(`${words.length} words, ${t0.toFixed(1)} s → ${out}`);
+console.log(`${words.length} words, ${t0.toFixed(1)} s -> ${out}`);
